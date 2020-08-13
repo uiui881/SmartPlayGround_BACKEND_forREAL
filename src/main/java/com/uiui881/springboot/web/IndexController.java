@@ -15,4 +15,9 @@ public class IndexController {
     public String mainPage(){
         return "mainPage";
     }
+
+    @GetMapping("/playgrounds/save")
+    public String playgroundsSave(){
+        return "playgrounds-save";
+    }
 }

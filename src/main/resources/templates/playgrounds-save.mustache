@@ -1,0 +1,50 @@
+{{>layout/header}}
+
+<h1>놀이터 등록</h1>
+
+<div class ="col-md-12">
+    <div class ="col-md-4">
+        <form>
+            <div class ="form-group">
+                <label for="name">놀이터 이름</label>
+                <input type ="text" class ="form-control"
+                       id="name" placeholder="놀이터 이름을 입력하세요">
+            </div>
+            <div class ="form-group">
+                <label for="writer">작성자</label>
+                <input type ="text" class ="form-control"
+                       id="writer" placeholder="작성자를 입력하세요">
+            </div>
+
+            <div class ="form-group">
+                <label for="minLatitude">놀이터 min위도</label>
+                <input type ="number" step="0.00000001" class ="form-control"
+                       id="minLatitude" placeholder="놀이터 위치(작은 위도)를 입력하세요">
+            </div>
+            <div class ="form-group">
+                <label for="maxLatitude">놀이터 max위도</label>
+                <input type ="number" step="0.00000001" class ="form-control"
+                       id="maxLatitude" placeholder="놀이터 위치(큰 위도)를 입력하세요">
+            </div>
+            <div class ="form-group">
+                <label for="minLongitude">놀이터 min경도</label>
+                <input type ="number" step="0.00000001" class ="form-control"
+                       id="minLongitude" placeholder="놀이터 위치(작은 경도)를 입력하세요">
+            </div>
+            <div class ="form-group">
+                <label for="maxLongitude">놀이터 max경도</label>
+                <input type ="number" step="0.00000001" class ="form-control"
+                       id="maxLongitude" placeholder="놀이터 위치(큰 경도)를 입력하세요">
+            </div>
+            <div class ="form-group">
+                <label for="congestion">혼잡도</label>
+                <input type ="number" class ="form-control"
+                       id="congestion" placeholder="혼잡도(인원)을 입력하세요">
+            </div>
+
+        </form>
+        <a href ="/" role="button" class ="btn btn-secondary">취소</a>
+        <button type ="button" class="btn btn-primary" id="btn-save">등록</button>
+    </div>
+</div>
+{{>layout/footer}}
