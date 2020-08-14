@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum Role {
 
+
+    GUEST("ROLE_GUEST","가입안한 손님"),
     PARENTS("ROLE_PARENTS", "보호자"),
     CHILD("ROLE_CHILD", "아이"),
     PG_MANAGER("ROLE_PG_MANAGER","놀이터 관리자"),

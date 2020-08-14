@@ -16,7 +16,7 @@ public class Safetychecks extends BaseTimeEntity {
     private Long id;
 
     @Column
-    private Long playgroundId_safety;
+    private String playgroundName;
 
     @Column
     private int questionId;
