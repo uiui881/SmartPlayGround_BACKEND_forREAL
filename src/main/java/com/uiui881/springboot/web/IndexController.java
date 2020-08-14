@@ -1,5 +1,6 @@
 package com.uiui881.springboot.web;
 
+import com.uiui881.springboot.config.auth.LoginUser;
 import com.uiui881.springboot.config.auth.dto.SessionUser;
 import com.uiui881.springboot.service.playgrounds.PlaygroundsService;
 import lombok.RequiredArgsConstructor;
@@ -27,10 +28,9 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         //model.addAttribute("playgrounds", playgroundsService.findAllDesc());
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         if(user!=null){
             model.addAttribute("userName", user.getName());
