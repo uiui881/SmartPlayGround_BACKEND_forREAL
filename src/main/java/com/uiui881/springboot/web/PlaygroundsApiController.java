@@ -1,9 +1,9 @@
 package com.uiui881.springboot.web;
 
 import com.uiui881.springboot.service.playgrounds.PlaygroundsService;
-import com.uiui881.springboot.web.dto.PlaygroundsResponseDto;
-import com.uiui881.springboot.web.dto.PlaygroundsSaveRequestDto;
-import com.uiui881.springboot.web.dto.PlaygroundsUpdateRequestDto;
+import com.uiui881.springboot.web.playground.dto.PlaygroundsResponseDto;
+import com.uiui881.springboot.web.playground.dto.PlaygroundsSaveRequestDto;
+import com.uiui881.springboot.web.playground.dto.PlaygroundsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

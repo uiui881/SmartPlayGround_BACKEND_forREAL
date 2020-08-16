@@ -13,6 +13,7 @@ import javax.persistence.*;
 public class Playgrounds extends BaseTimeEntity {
 
     @Id
+    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long playgroundId;
 

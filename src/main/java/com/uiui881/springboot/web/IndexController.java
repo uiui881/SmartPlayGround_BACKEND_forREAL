@@ -3,7 +3,7 @@ package com.uiui881.springboot.web;
 import com.uiui881.springboot.config.auth.LoginUser;
 import com.uiui881.springboot.config.auth.dto.SessionUser;
 import com.uiui881.springboot.service.playgrounds.PlaygroundsService;
-import com.uiui881.springboot.web.dto.PlaygroundsResponseDto;
+import com.uiui881.springboot.web.playground.dto.PlaygroundsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

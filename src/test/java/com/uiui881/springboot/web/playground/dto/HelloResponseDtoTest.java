@@ -1,4 +1,4 @@
-package com.uiui881.springboot.web.dto;
+package com.uiui881.springboot.web.playground.dto;
 
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;

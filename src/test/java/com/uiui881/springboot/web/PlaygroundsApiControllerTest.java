@@ -4,8 +4,8 @@ package com.uiui881.springboot.web;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.uiui881.springboot.domain.playgrounds.Playgrounds;
 import com.uiui881.springboot.domain.playgrounds.PlaygroundsRepository;
-import com.uiui881.springboot.web.dto.PlaygroundsSaveRequestDto;
-import com.uiui881.springboot.web.dto.PlaygroundsUpdateRequestDto;
+import com.uiui881.springboot.web.playground.dto.PlaygroundsSaveRequestDto;
+import com.uiui881.springboot.web.playground.dto.PlaygroundsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +21,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 
 import java.util.List;
 

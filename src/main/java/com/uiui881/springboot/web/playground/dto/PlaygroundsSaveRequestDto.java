@@ -1,4 +1,4 @@
-package com.uiui881.springboot.web.dto;
+package com.uiui881.springboot.web.playground.dto;
 
 
 import com.uiui881.springboot.domain.playgrounds.Playgrounds;
