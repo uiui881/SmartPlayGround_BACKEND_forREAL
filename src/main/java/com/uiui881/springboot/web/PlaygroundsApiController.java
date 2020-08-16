@@ -14,18 +14,24 @@ public class PlaygroundsApiController {
     private final PlaygroundsService playgroundsService;
 
     @PostMapping("/api/v1/playgrounds")
-    public Long save(@RequestBody PlaygroundsSaveRequestDto requestDto){
+    public long save(@RequestBody PlaygroundsSaveRequestDto requestDto){
         return playgroundsService.save(requestDto);
     }
 
-    @PostMapping("/api/v1/playgrounds/{playgroundId}")
-    public Long update(@PathVariable Long playgroundId, @RequestBody PlaygroundsUpdateRequestDto requestDto){
+    @PutMapping("/api/v1/playgrounds/{playgroundId}")
+    public long update(@PathVariable long playgroundId, @RequestBody PlaygroundsUpdateRequestDto requestDto){
         return playgroundsService.update(playgroundId, requestDto);
     }
 
     @GetMapping("/api/v1/playgrounds/{playgroundId}")
-    public PlaygroundsResponseDto findById(@PathVariable Long playgroundId){
+    public PlaygroundsResponseDto findById(@PathVariable long playgroundId){
         return playgroundsService.findById(playgroundId);
-
     }
+
+    @DeleteMapping("/api/v1/playgrounds/{playgroundId}")
+    public long delete(@PathVariable long playgroundId){
+        playgroundsService.delete(playgroundId);
+        return playgroundId;
+    }
+
 }

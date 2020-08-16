@@ -51,7 +51,7 @@ public class OAuthAttributes {
                 .attributes(response).nameAttributeKey(userNameAttributeName).build();
     }
     public User toEntity(){
-        return User.builder().name(name).email(email).picture(picture).role(Role.GUEST).age(12).build();
+        return User.builder().name(name).email(email).picture(picture).role(Role.CHILD).age(12).build();
     }
 
 }

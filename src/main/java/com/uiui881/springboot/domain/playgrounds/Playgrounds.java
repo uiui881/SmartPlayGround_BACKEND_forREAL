@@ -14,7 +14,7 @@ public class Playgrounds extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long playgroundId;
+    private long playgroundId;
 
     @Column(nullable =false)
     private String name;

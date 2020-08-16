@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PlaygroundsUpdateRequestDto {
 
+    private long playgroundId;
     private double minLatitude;
     private double maxLatitude;
     private double minLongitude;
@@ -16,9 +17,10 @@ public class PlaygroundsUpdateRequestDto {
 
 
     @Builder
-    public PlaygroundsUpdateRequestDto(double minLatitude, double maxLatitude,
+    public PlaygroundsUpdateRequestDto(long playgroundId, double minLatitude, double maxLatitude,
                                      double minLongitude, double maxLongitude, int congestion){
 
+        this.playgroundId = playgroundId;
         this.minLatitude = minLatitude;
         this.maxLatitude = maxLatitude;
         this.minLongitude = minLongitude;

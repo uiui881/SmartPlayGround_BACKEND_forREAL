@@ -1,51 +1,58 @@
 {{>layout/header}}
 
-<h1>놀이터 등록</h1>
+<h1>놀이터 수정</h1>
 
 <div class ="col-md-12">
     <div class ="col-md-4">
         <form>
 
             <div class ="form-group">
+                <label for="playgroundId">놀이터 번호</label>
+                <input type ="number" class ="form-control"
+                       id="playgroundId" value="{{playground.playgroundId}}" readonly>
+            </div>
+
+            <div class ="form-group">
                 <label for="name">놀이터 이름</label>
                 <input type ="text" class ="form-control"
-                       id="name" placeholder="놀이터 이름을 입력하세요">
+                       id="name" value="{{playground.name}}" readonly>
             </div>
             <div class ="form-group">
                 <label for="writer">작성자</label>
                 <input type ="text" class ="form-control"
-                       id="writer" placeholder="작성자를 입력하세요">
+                       id="writer" value="{{playground.writer}}" readonly>
             </div>
 
             <div class ="form-group">
                 <label for="minLatitude">놀이터 min위도</label>
                 <input type ="number" step="0.001" class ="form-control"
-                       id="minLatitude" placeholder="놀이터 위치(작은 위도)를 입력하세요">
+                       id="minLatitude" value="{{playground.minLatitude}}">
             </div>
             <div class ="form-group">
                 <label for="maxLatitude">놀이터 max위도</label>
                 <input type ="number" step="0.001" class ="form-control"
-                       id="maxLatitude" placeholder="놀이터 위치(큰 위도)를 입력하세요">
+                       id="maxLatitude" value="{{playground.maxLatitude}}">
             </div>
             <div class ="form-group">
                 <label for="minLongitude">놀이터 min경도</label>
                 <input type ="number" step="0.001" class ="form-control"
-                       id="minLongitude" placeholder="놀이터 위치(작은 경도)를 입력하세요">
+                       id="minLongitude" value="{{playground.minLongitude}}">
             </div>
             <div class ="form-group">
                 <label for="maxLongitude">놀이터 max경도</label>
                 <input type ="number" step="0.001" class ="form-control"
-                       id="maxLongitude" placeholder="놀이터 위치(큰 경도)를 입력하세요">
+                       id="maxLongitude" value="{{playground.maxLongitude}}">
             </div>
             <div class ="form-group">
                 <label for="congestion">혼잡도</label>
                 <input type ="number" class ="form-control"
-                       id="congestion" placeholder="혼잡도(인원)을 입력하세요">
+                       id="congestion" value="{{playground.congestion}}">
             </div>
 
         </form>
         <a href ="/playgrounds/list" role="button" class ="btn btn-secondary">취소</a>
-        <button type=button" class="btn btn-primary" id="btn-save">등록</button>
+        <button type=button" class="btn btn-primary" id="btn-update">수정 완료</button>
+        <button type=button" class="btn btn-danger" id="btn-delete">수정 삭제</button>
     </div>
 </div>
 {{>layout/footer}}

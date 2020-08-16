@@ -1,0 +1,32 @@
+{{>layout/header}}
+
+<h1> 놀이터 조회하기(놀이터 이름과 혼잡도만 나오게)</h1>
+<div class ="col-md-12">
+    <div class ="row">
+        <div class ="col-md-6">
+            <a href ="/playgrounds/save" role ="button" class ="btn btn-primary">글 등록</a>
+        </div>
+    </div>
+    <br>
+<table class="table table-horizontal table-bordered">
+
+    <thread class ="thread-strong">
+        <tr>
+            <th>놀이터 ID</th>
+            <th>놀이터 이름</th>
+            <th>놀이터 혼잡도</th>
+        </tr>
+    </thread>
+
+    <tbody id="tbody">
+    {{#playgrounds}}
+        <tr>
+            <td>{{playgroundId}}</td>
+            <td><a href="/playgrounds/update/{{playgroundId}}">{{name}}</a></td>
+            <td>{{congestion}}</td>
+        </tr>
+    {{/playgrounds}}
+    </tbody>
+</table>
+</div>
+{{>layout/footer}}
