@@ -30,7 +30,7 @@ public class Accident extends BaseTimeEntity {
 
     private String improving;
 
-    @ManyToOne
-    @JoinColumn(name="managerInfo_no")
-    ManagerInfo managerInfo;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "manager_id", foreignKey = @ForeignKey(name = "FK_ACCIDENT_MANAGER"))
+    private ManagerInfo managerInfo;
 }

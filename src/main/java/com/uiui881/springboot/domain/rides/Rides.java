@@ -20,8 +20,8 @@ public class Rides extends BaseTimeEntity {
     @Column(nullable =false)
     private String rideName;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="ride_playgrounds")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "playgrounds_id", foreignKey = @ForeignKey(name = "FK_RIDES_PLAYGROUND"))
     private Playgrounds playground;
 
     @Column(nullable =false)

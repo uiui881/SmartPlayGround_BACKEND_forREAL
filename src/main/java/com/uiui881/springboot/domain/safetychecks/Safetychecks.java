@@ -1,6 +1,8 @@
 package com.uiui881.springboot.domain.safetychecks;
 
 import com.uiui881.springboot.domain.BaseTimeEntity;
+import com.uiui881.springboot.domain.managerinfo.ManagerInfo;
+import com.uiui881.springboot.domain.playgrounds.Playgrounds;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,8 +17,9 @@ public class Safetychecks extends BaseTimeEntity {
     @Id
     private Long id;
 
-    @Column
-    private String playgroundName;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "playground_id", foreignKey = @ForeignKey(name = "FK_SAFETYCHECKS_PLAYGROUNDS"))
+    private Playgrounds playgrounds;
 
     @Column
     private int questionId;
@@ -24,7 +27,8 @@ public class Safetychecks extends BaseTimeEntity {
     @Column
     private boolean checkResult;
 
-    @Column
-    private String checkerName;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "checker_id", foreignKey = @ForeignKey(name = "FK_SAFETYCHECKS_MANAGER"))
+    private ManagerInfo managerInfo;
 
 }
