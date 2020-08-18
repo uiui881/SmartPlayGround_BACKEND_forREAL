@@ -10,10 +10,9 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Playgrounds extends BaseTimeEntity {
+public class Playgrounds{// extends BaseTimeEntity {
 
     @Id
-    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long playgroundId;
 

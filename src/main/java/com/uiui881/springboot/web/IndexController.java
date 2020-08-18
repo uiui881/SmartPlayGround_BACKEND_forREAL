@@ -51,4 +51,9 @@ public class IndexController {
 
         return "playgrounds-update";
     }
+
+    @GetMapping("/rides/list")
+    public String ridesList() {
+        return "rides-list";
+    }
 }

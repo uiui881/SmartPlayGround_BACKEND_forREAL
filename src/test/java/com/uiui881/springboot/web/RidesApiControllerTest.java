@@ -6,6 +6,7 @@ import com.uiui881.springboot.domain.playgrounds.PlaygroundsRepository;
 import com.uiui881.springboot.domain.rides.Rides;
 import com.uiui881.springboot.domain.rides.RidesRepository;
 import com.uiui881.springboot.web.rides.dto.RidesSaveRequestDto;
+import com.uiui881.springboot.web.rides.dto.RidesUpdateRequestDto;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -71,17 +72,17 @@ public class RidesApiControllerTest {
         String rideName = "그네";
         int rideCongestion =19;
 
-        playgroundsRepository.save(Playgrounds.builder().name("놀이터1").minLatitude(15).maxLatitude(20)
-        .minLongitude(15).maxLongitude(20).congestion(21).writer("놀이터1작성자").build());
+        playgroundsRepository.save(Playgrounds.builder().name("놀이터1").minLatitude(15.0).maxLatitude(20.0)
+        .minLongitude(15.0).maxLongitude(20.0).congestion(21).writer("놀이터1작성자").build());
 
         List<Playgrounds> playgroundsList = playgroundsRepository.findAll();
 
         Playgrounds playground = playgroundsList.get(0);
 
-        RidesSaveRequestDto requestDto = RidesSaveRequestDto.builder().rideName(rideName).rideCongestion(rideCongestion)
-                .playground(playground).build();
+        RidesSaveRequestDto requestDto = RidesSaveRequestDto.builder().rideName(rideName)
+                .playground(playground).rideCongestion(rideCongestion).build();
 
-        String url ="https://localhost:"+port+"/api/v1/rides";
+        String url ="http://localhost:" + port + "/api/v1/rides";
 
         mvc.perform(post(url)
                .contentType(MediaType.APPLICATION_JSON_UTF8)
@@ -101,5 +102,36 @@ public class RidesApiControllerTest {
         assertThat(all.get(0).getPlayground().getMinLatitude()).isEqualTo(15);
         assertThat(all.get(0).getPlayground().getMaxLatitude()).isEqualTo(20);
         assertThat(all.get(0).getPlayground().getCongestion()).isEqualTo(21);
+    }
+
+    @Test
+    @WithMockUser(roles="CHILD")
+    public void Rides_수정된다() throws Exception{
+        playgroundsRepository.save(Playgrounds.builder().name("놀이터1").minLatitude(15.0).maxLatitude(20.0)
+                .minLongitude(15.0).maxLongitude(20.0).congestion(21).writer("놀이터1작성자").build());
+
+        List<Playgrounds> playgroundsList = playgroundsRepository.findAll();
+
+        Playgrounds playground = playgroundsList.get(0);
+
+       Rides savedRides = ridesRepository.save(Rides.builder().rideName("그네").playground(playground)
+       .rideCongestion(19).build());
+
+      Long updateId = savedRides.getId_r();
+      int expectedRideCongestion = 200;
+
+        RidesUpdateRequestDto requestDto = RidesUpdateRequestDto.builder().rideCongestion(expectedRideCongestion)
+                .build();
+
+        String url ="http://localhost:"+port+"/api/v1/rides/"+updateId;
+
+        mvc.perform(put(url)
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(new ObjectMapper().writeValueAsString(requestDto))).andExpect(status().isOk());
+
+        List<Rides> all = ridesRepository.findAll();
+        assertThat(all.get(0).getRideCongestion()).isEqualTo(expectedRideCongestion);
+
+
     }
 }

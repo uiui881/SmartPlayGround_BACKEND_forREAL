@@ -22,6 +22,6 @@ public class RidesSaveRequestDto {
     }
 
     public Rides toEntity(){
-        return Rides.builder().rideName(rideName).rideCongestion(rideCongestion).playground(playground).build();
+        return Rides.builder().rideName(rideName).playground(playground).rideCongestion(rideCongestion).build();
     }
 }
