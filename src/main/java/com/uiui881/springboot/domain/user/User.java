@@ -1,6 +1,6 @@
 package com.uiui881.springboot.domain.user;
 
-import com.uiui881.springboot.domain.BaseTimeEntity;
+import com.uiui881.springboot.domain.safety.SafetyTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class User extends BaseTimeEntity {
+public class User extends SafetyTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

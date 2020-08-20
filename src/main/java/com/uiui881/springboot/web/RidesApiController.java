@@ -18,7 +18,7 @@ public class RidesApiController {
 
     private final RidesService ridesService;
 
-    @PostMapping(value= "/api/v1/rides", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value= "/api/v1/rides")
     public Long save(@RequestBody RidesSaveRequestDto requestDto){
         return ridesService.save(requestDto);
     }
@@ -29,7 +29,11 @@ public class RidesApiController {
     }
 
     @GetMapping("/api/v1/rides/{id_r}")
-    public RidesResponseDto findById(@PathVariable Long id_r){
-        return ridesService.findById(id_r);
+    public RidesResponseDto findById(@PathVariable Long id_r){ return ridesService.findById(id_r); }
+
+    @DeleteMapping("/api/v1/rides/{id_r}")
+    public long delete(@PathVariable long id_r){
+        ridesService.delete(id_r);
+        return id_r;
     }
 }

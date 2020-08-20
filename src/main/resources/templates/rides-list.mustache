@@ -1,0 +1,36 @@
+{{>layout/header}}
+
+<h1> 놀이기구 CRUD</h1>
+<div class ="col-md-12">
+    <div class ="row">
+        <div class ="col-md-6">
+            <a href ="/rides/save" role ="button" class ="btn btn-primary">놀이기구 등록</a>
+        </div>
+    </div>
+
+    <br>
+    <table class="table table-horizontal table-bordered">
+
+        <thread class ="thread-strong">
+            <tr>
+                <th>놀이기구 ID</th>
+                <th>놀이터 ID</th>
+                <th>놀이기구 이름</th>
+                <th>놀이기구 혼잡도</th>
+            </tr>
+        </thread>
+
+        <tbody id="tbody">
+        {{#rides}}
+            <tr>
+                <td>{{id_r}}</td>
+                <td>{{id_p}}</a></td>
+                <td><a href="/rides/update/{{id_r}}">{{rideName}}</a></td>
+                <td>{{rideCongestion}}</td>
+            </tr>
+        {{/rides}}
+        </tbody>
+    </table>
+
+</div>
+{{>layout/footer}}

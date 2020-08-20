@@ -80,7 +80,7 @@ public class RidesApiControllerTest {
         Playgrounds playground = playgroundsList.get(0);
 
         RidesSaveRequestDto requestDto = RidesSaveRequestDto.builder().rideName(rideName)
-                .playground(playground).rideCongestion(rideCongestion).build();
+                .id_p(id_p).rideCongestion(rideCongestion).build();
 
         String url ="http://localhost:" + port + "/api/v1/rides";
 

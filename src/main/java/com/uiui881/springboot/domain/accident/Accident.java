@@ -1,8 +1,6 @@
 package com.uiui881.springboot.domain.accident;
 
 
-import com.uiui881.springboot.domain.BaseTimeEntity;
-import com.uiui881.springboot.domain.managerinfo.ManagerInfo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -12,25 +10,33 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Accident extends BaseTimeEntity {
+public class Accident {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long accidentId;
 
+    @Column
     private LocalDateTime accidentDate;
 
-    private String place;
+    @Column
+    private long id_p;
 
+    @Column
     private String accidentHandling;
 
+    @Column
     private String result;
 
+    @Column
     private String cause;
 
+    @Column
     private String improving;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "manager_id", foreignKey = @ForeignKey(name = "FK_ACCIDENT_MANAGER"))
-    private ManagerInfo managerInfo;
+    @Column
+    private long id_MI;
+
+    @Column
+    private LocalDateTime createdDate;
 }

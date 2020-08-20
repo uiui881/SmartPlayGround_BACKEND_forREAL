@@ -1,8 +1,5 @@
 package com.uiui881.springboot.domain.rides;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.uiui881.springboot.domain.BaseTimeEntity;
-import com.uiui881.springboot.domain.playgrounds.Playgrounds;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,17 +18,15 @@ public class Rides{
     @Column(nullable =false)
     private String rideName;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(foreignKey = @ForeignKey(name = "FK_RIDES_PLAYGROUND"))
-    private Playgrounds playground;
+    private long id_p;
 
     @Column(nullable =false)
     private int rideCongestion;
 
     @Builder
-    public Rides(String rideName, Playgrounds playground, int rideCongestion){
+    public Rides(String rideName, Long id_p, int rideCongestion){
         this.rideName = rideName;
-        this.playground = playground;
+        this.id_p = id_p;
         this.rideCongestion = rideCongestion;
     }
 

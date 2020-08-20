@@ -1,0 +1,40 @@
+{{>layout/header}}
+
+<h1> 안전관리 CRUD</h1>
+<div class ="col-md-12">
+    <div class ="row">
+        <div class ="col-md-6">
+            <a href ="/safety/save" role ="button" class ="btn btn-primary">안전관리체크 등록</a>
+        </div>
+    </div>
+
+    <br>
+    <table class="table table-horizontal table-bordered">
+
+        <thread class ="thread-strong">
+            <tr>
+                <th>ID</th>
+                <th>놀이터 ID</th>
+                <th>항목 ID</th>
+                <th>점검결과</th>
+                <th>마지막 점검일</th>
+                <th>관리자</th>
+            </tr>
+        </thread>
+
+        <tbody id="tbody">
+        {{#safety}}
+            <tr>
+                <td>{{id_s}}</td>
+                <td>{{id_p}}</a></td>
+                <td>{{questionId}}</a></td>
+                <td><a href="/safety/update/{{id_s}}">{{checkResult}}</a></td>
+                <td>{{lastCheckDate}}</td>
+                <td><a href="/managerInfo/update/{{id_MI}}">관리자 정보</a></td>
+            </tr>
+        {{/safety}}
+        </tbody>
+    </table>
+
+</div>
+{{>layout/footer}}

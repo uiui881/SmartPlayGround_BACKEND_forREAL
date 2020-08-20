@@ -1,0 +1,40 @@
+{{>layout/header}}
+
+<h1>관리자 정보 수정</h1>
+
+<div class ="col-md-12">
+    <div class ="col-md-4">
+        <form>
+
+            <div class ="form-group">
+                <label for="managerId">ID</label>
+                <input type ="number" class ="form-control"
+                       id="managerId" value="{{managerInfo.managerId}}" readonly>
+            </div>
+
+            <div class ="form-group">
+                <label for="managerName">관리자 이름</label>
+                <input type ="text" class ="form-control"
+                       id="managerName" value="{{managerInfo.managerName}}">
+            </div>
+
+            <div class ="form-group">
+                <label for="institution">관리자 소속</label>
+                <input type ="text" class ="form-control"
+                       id="institution" value="{{managerInfo.institution}}">
+            </div>
+
+            <div class ="form-group">
+                <label for="contact">놀이기구 혼잡도</label>
+                <input type ="text" class ="form-control"
+                       id="contact" value="{{managerInfo.contact}}">
+            </div>
+
+        </form>
+        <a href ="/managerInfos/list" role="button" class ="btn btn-secondary">취소</a>
+        <button type=button" class="btn btn-primary" id="btn-managerInfos-update">수정 완료</button>
+        <button type=button" class="btn btn-danger" id="btn-managerInfos-delete">삭제</button>
+    </div>
+</div>
+
+{{>layout/footer}}

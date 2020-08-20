@@ -1,6 +1,5 @@
 package com.uiui881.springboot.domain.playgrounds;
 
-import com.uiui881.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

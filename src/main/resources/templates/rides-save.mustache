@@ -1,0 +1,31 @@
+{{>layout/header}}
+
+<h1>놀이기구 등록</h1>
+
+<div class ="col-md-12">
+    <div class ="col-md-4">
+        <form>
+
+            <div class ="form-group">
+                <label for="id_p">놀이터 ID</label>
+                <input type ="number" class ="form-control"
+                       id="id_p" placeholder="놀이터 ID를 입력하세요">
+            </div>
+            <div class ="form-group">
+                <label for="rideName">놀이기구 이름</label>
+                <input type ="text" class ="form-control"
+                       id="rideName" placeholder="놀이기구 이름을 입력하세요">
+            </div>
+
+            <div class ="form-group">
+                <label for="rideCongestion">놀이기구 혼잡도</label>
+                <input type ="number" class ="form-control"
+                       id="rideCongestion" placeholder="놀이기구 사용중 여부를 입력하세요">
+            </div>
+
+        </form>
+        <a href ="/rides/list" role="button" class ="btn btn-secondary">취소</a>
+        <button type=button" class="btn btn-primary" id="btn-rides-save">등록</button>
+    </div>
+</div>
+{{>layout/footer}}

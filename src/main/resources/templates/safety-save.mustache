@@ -1,0 +1,42 @@
+{{>layout/header}}
+
+<h1>안전관리 등록</h1>
+{{>layout/checkOnly}}
+
+<div class ="col-md-12">
+    <div class ="col-md-4">
+        <form>
+
+            <div class ="form-group">
+                <label for="id_p">놀이터 ID</label>
+                <input type ="number" class ="form-control"
+                       id="id_p" placeholder="놀이터 ID를 입력하세요">
+            </div>
+            <div class ="form-group">
+                <label for="questionId">항목 ID</label>
+                <input type ="number" class ="form-control"
+                       id="questionId" placeholder="항목 ID를 입력하세요">
+            </div>
+
+            <div class ="form-group">
+                <label for="checkResult">점검결과</label>
+                <form>
+                    <input type="checkbox" name="checkResult" value=true onClick="javascript:checkOnly(this);" />양호함
+                    <input type="checkbox" name="checkResult" value=false onClick="javascript:checkOnly(this);" />양호하지 않음
+                </form>
+            </div>
+
+            <div class ="form-group">
+                <label for="id_MI">관리자 ID</label>
+                <input type ="number" class ="form-control"
+                       id="id_MI" placeholder="관리자 ID를 입력하세요">
+
+            </div>
+
+
+        </form>
+        <a href ="/safety/list" role="button" class ="btn btn-secondary">취소</a>
+        <button type=button" class="btn btn-primary" id="btn-safety-save">등록</button>
+    </div>
+</div>
+{{>layout/footer}}

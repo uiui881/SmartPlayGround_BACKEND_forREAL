@@ -11,17 +11,17 @@ import lombok.NoArgsConstructor;
 public class RidesSaveRequestDto {
 
     private String rideName;
-    private Playgrounds playground;
+    private long id_p;
     private int rideCongestion;
 
     @Builder
-    public RidesSaveRequestDto(String rideName, Playgrounds playground, int rideCongestion){
+    public RidesSaveRequestDto(String rideName, Long id_p, int rideCongestion){
         this.rideName = rideName;
-        this.playground = playground;
+        this.id_p = id_p;
         this.rideCongestion = rideCongestion;
     }
 
     public Rides toEntity(){
-        return Rides.builder().rideName(rideName).playground(playground).rideCongestion(rideCongestion).build();
+        return Rides.builder().rideName(rideName).id_p(id_p).rideCongestion(rideCongestion).build();
     }
 }

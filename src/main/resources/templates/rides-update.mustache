@@ -1,0 +1,40 @@
+{{>layout/header}}
+
+<h1>놀이기구 수정</h1>
+
+<div class ="col-md-12">
+    <div class ="col-md-4">
+        <form>
+
+            <div class ="form-group">
+                <label for="id_r">ID</label>
+                <input type ="number" class ="form-control"
+                       id="id_r" value="{{ride.id_r}}" readonly>
+            </div>
+
+            <div class ="form-group">
+                <label for="id_p">놀이터 ID</label>
+                <input type ="number" class ="form-control"
+                       id="id_p" value="{{ride.id_p}}" readonly>
+            </div>
+
+            <div class ="form-group">
+                <label for="rideName">놀이기구 이름</label>
+                <input type ="text" class ="form-control"
+                       id="rideName" value="{{ride.rideName}}" readonly>
+            </div>
+
+            <div class ="form-group">
+                <label for="rideCongestion">놀이기구 혼잡도</label>
+                <input type ="number" class ="form-control"
+                       id="rideCongestion" value="{{ride.rideCongestion}}">
+            </div>
+
+        </form>
+        <a href ="/playgrounds/list" role="button" class ="btn btn-secondary">취소</a>
+        <button type=button" class="btn btn-primary" id="btn-rides-update">수정 완료</button>
+        <button type=button" class="btn btn-danger" id="btn-rides-delete">삭제</button>
+    </div>
+</div>
+
+{{>layout/footer}}

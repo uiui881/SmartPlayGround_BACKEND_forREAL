@@ -1,0 +1,50 @@
+{{>layout/header}}
+
+<h1>안전점검표 수정</h1>
+{{>layout/checkOnly}}
+<div class ="col-md-12">
+    <div class ="col-md-4">
+        <form>
+
+            <div class ="form-group">
+                <label for="id_s">ID</label>
+                <input type ="number" class ="form-control"
+                       id="id_s" value="{{safety.id_s}}" readonly>
+            </div>
+
+            <div class ="form-group">
+                <label for="id_p">놀이터 ID</label>
+                <input type ="number" class ="form-control"
+                       id="id_p" value="{{safety.id_p}}" readonly>
+            </div>
+
+            <div class ="form-group">
+                <label for="questionId">항목 ID</label>
+                <input type ="number" class ="form-control"
+                       id="questionId" value="{{safety.questionId}}" readonly>
+            </div>
+
+            <div class ="form-group">
+                <label for="checkResult">점검 결과</label>
+                <form>
+                    <form>
+                        <input type="checkbox" name="checkResult" id="1" value="1" onClick="javascript:checkOnly(this);" />양호함
+                        <input type="checkbox" name="checkResult" id="2" value="0" onClick="javascript:checkOnly(this);" />양호하지 않음
+                    </form>
+                </form>
+            </div>
+
+            <div class ="form-group">
+                <label for="id_MI">관리자 </label>
+                <input type ="number" class ="form-control"
+                       id="id_MI" value="{{safety.id_MI}}">
+            </div>
+
+        </form>
+        <a href ="/safety/list" role="button" class ="btn btn-secondary">취소</a>
+        <button type=button" class="btn btn-primary" id="btn-safety-update">수정 완료</button>
+        <button type=button" class="btn btn-danger" id="btn-safety-delete">삭제</button>
+    </div>
+</div>
+
+{{>layout/footer}}
