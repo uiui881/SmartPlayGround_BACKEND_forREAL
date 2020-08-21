@@ -1,6 +1,8 @@
 #SmartPlayGround 프로젝트의 BACKEND 구현을 위한 REPO
 (BACKEND 이지만 개발 시의 편의를 위해 화면 구성도 같이 함)
 
+
+
 #기능적 요구사항
 사용자 Role : 서비스 사용자(보호자, 아이, 놀이터 점검자)
 
